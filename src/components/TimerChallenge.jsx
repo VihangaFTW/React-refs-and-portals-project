@@ -8,15 +8,14 @@ export default function TimerChallenge({ targetTime, title }) {
 
   function handleStart() {
     // time should be in milliseconds for this function
+		// setTimeout expects a function as first argument
     timer.current = setTimeout(() => setTimerExpired(true), targetTime * 1000);
     setTimerStarted(true);
   }
 
   function handleStop() {
     clearTimeout(timer.current);
-		setTimerStarted(false);
-		
-
+    setTimerStarted(false);
   }
 
   return (
